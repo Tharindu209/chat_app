@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -lncurses
 
 mainServer:
 	$(CC) $(CFLAGS) -o mainServer mainServer.c tic-tac-toe/game_server.c chatApp/chat_server.c

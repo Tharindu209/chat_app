@@ -84,6 +84,8 @@ int chat_client(int initPort, char* initIp){
     int port = initPort;
     signal(SIGINT, catch_ctrl_c_and_exit);
 
+    printf("=== WELCOME TO THE CHATROOM ===\n");
+
     printf("Please enter your name : ");
     scanf("%s", name);
 
@@ -106,8 +108,6 @@ int chat_client(int initPort, char* initIp){
     }
 
     send(sockfd, name, 32, 0);
-
-    printf("=== WELCOME TO THE CHATROOM ===\n");
 
     pthread_t send_msg_thread;
     if (pthread_create(&send_msg_thread, NULL, (void *) send_msg_handler, NULL) != 0){
